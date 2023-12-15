@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Илья",
+      "email": "admin@mail.ru",
+      "password": "12345",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Андрей",
+      "email": "moder@mail.ru",
+      "password": "54321",
+      "role": "moderator"
+    },
+    {
+      "id": 3,
+      "name": "Олег",
+      "email": "user@mail.ru",
+      "password": "123",
+      "role": "user"
+    },
+    {
+      "id": 4,
+      "name": "14242",
+      "email": "gdgbwsg",
+      "password": "hewgwe",
+      "role": "user"
+    },
+    {
+      "id": 5,
+      "name": "14242",
+      "email": "gdgbwsg",
+      "password": "hewgwe",
+      "role": "user"
+    },
+    {
+      "id": 6,
+      "name": "14242",
+      "email": "gdgbwsg",
+      "password": "hewgwe",
+      "role": "user"
+    },
+    {
+      "id": 7,
+      "name": "63",
+      "email": "2362",
+      "password": "5253634",
+      "role": "user"
+    },
+    {
+      "id": 8,
+      "name": "63",
+      "email": "2362",
+      "password": "5253634",
+      "role": "user"
+    }
+  ]
+}
