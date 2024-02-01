@@ -3,11 +3,23 @@ export interface IUser {
     name: string
     email: string
     password: string
-    role: UserRole
+    role: string
 }
 
-export enum UserRole {
-    admin = 'admin',
-    moder = 'moderator',
-    user = 'user',
+export interface ISelect {
+    options: Option[]
+    selected: Option | null
+    isOpen: boolean
+}
+
+type Option = {
+    title: string
+    value: string
+}
+
+export type ParticlesDots = {
+    size: number
+    x: number
+    y: number
+    deg: number
 }

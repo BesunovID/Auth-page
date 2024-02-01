@@ -1,29 +1,37 @@
-import { useEffect } from "react";
-import { LoginButton } from "../components/LoginButton";
-import { LogoutButton } from "../components/LogoutButton";
+import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../hook/redux";
-import { fetchUser } from "../store/actions/userActions";
+import {authSlice} from "../store/slices/authSlice";
+import style from '../styles/Main.module.scss'
 
 export function Main() {
     const dispatch = useAppDispatch();
     const authSelector = useAppSelector(state => state.auth);
 
-    useEffect(()=>{
-        dispatch(fetchUser())
-    }, [dispatch])
+    const handleLogout = () => {
+        dispatch(authSlice.actions.logout())
+    }
 
     return(
-        <>
+        <div className={style.container}>
             {authSelector.isAuth ? 
-            <div className="logged">
-                <p>{authSelector.username}</p>
-                <LogoutButton />
+            <div className={style.logged}>
+                <p className={style.username}>{authSelector.username}</p>
+                <button className={style['logout-btn']} onClick={handleLogout}>
+                    <Link to='/'>
+                        Выйти
+                    </Link>
+                </button>
             </div>
-            : <LoginButton />
+            : 
+            <button className={style['login-btn']}>
+                <Link to='/auth'>
+                    Войти
+                </Link>
+            </button>
             }
-            <div className="1">
+            <div className={style['main-content']}>
                 Главная
             </div>
-        </>
+        </div>
     )
 }

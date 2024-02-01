@@ -1,8 +1,9 @@
-
 import React from "react"
 import { Link } from "react-router-dom";
+import { Particles } from "../components/Particles";
 import { useAppDispatch } from "../hook/redux";
 import { login } from "../store/actions/authActions";
+import style from '../styles/Auth.module.scss'
 
 export function Auth() {
     const dispatch = useAppDispatch();
@@ -31,27 +32,32 @@ export function Auth() {
     }
 
     return(
-        <>
+        <div className={style.login}>
             <form
-                className="mainForm"
+                className={style.mainForm}
                 onSubmit={loginSubmitHandler}
             >
-                <div className="userName">
+                <div className={style.formField}>
                     <label htmlFor="username">Логин</label>
                     <input type="text" name='username'/>
                 </div>
-                <div className="password">
+                <div className={style.formField}>
                     <label htmlFor="password">Пароль</label>
                     <input type="text" name='password'/>
                 </div>
-                <input type="submit" value='Войти' />
+                <button type="submit">
+                    Войти
+                </button>
             </form>
-            <p>или</p>
-            <button className="reg-btn">
-                <Link to='/registration'>
-                    Зарегистрироваться
-                </Link>
-            </button>
-        </>
+            <div className={style.noAccount}>
+                <p>Нет аккаунта?</p>
+                <button className={style['reg-btn']}>
+                    <Link to='/registration'>
+                        Зарегистрироваться
+                    </Link>
+                </button>
+            </div>
+            <Particles /> 
+        </div>
     )
 }
