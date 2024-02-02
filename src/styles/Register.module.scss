@@ -7,9 +7,9 @@
     align-items: center;
     width: 50%;
     min-width: 450px;
-    background-color: $light_green_color;
+    background-color: $light_color;
     border: $dark_color solid 2px;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 50px 0;
     .createAccount{
         font-size: 22px;
@@ -27,7 +27,7 @@
         }
         button{
             width: 100%;
-            height: 35px;
+            height: 38px;
         }
     }
 }

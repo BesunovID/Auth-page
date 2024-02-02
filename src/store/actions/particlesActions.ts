@@ -13,8 +13,9 @@ export const changeDirection = (particlesDots: ParticlesDots[]) => {
 }
 
 const operation = (particleDots: ParticlesDots) => {
-    const distance: number = 150;
-    const step: number = 10;
+    const distanceMax: number = 97;
+    const distanceMin: number = 3;
+    const step: number = 5;
 
     let interimShift = {
         deg: particleDots.deg, 
@@ -22,11 +23,13 @@ const operation = (particleDots: ParticlesDots) => {
         y: particleDots.y
     };
 
-    interimShift = changeShift(interimShift.deg, interimShift.x, interimShift.y, step);
+    interimShift = changeShift(interimShift.deg, step);
 
-    while (Math.abs(particleDots.x + interimShift.x) >= distance || 
-    Math.abs(particleDots.y + interimShift.y) >= distance) {
-        interimShift = changeShift(interimShift.deg, interimShift.x, interimShift.y, step)
+    while (Math.abs(particleDots.x + interimShift.x) >= distanceMax || 
+    Math.abs(particleDots.y + interimShift.y) >= distanceMax || 
+    Math.abs(particleDots.x + interimShift.x) <= distanceMin || 
+    Math.abs(particleDots.y + interimShift.y) <= distanceMin) {
+        interimShift = changeShift(interimShift.deg, step)
     }
     const newParticle: ParticlesDots = {
         size: particleDots.size,
@@ -37,8 +40,8 @@ const operation = (particleDots: ParticlesDots) => {
     return(newParticle)
 }
 
-const changeShift = (deg: number, x: number, y: number, step: number) => {
-    const maxRotate: number = 55;
+const changeShift = (deg: number, step: number) => {
+    const maxRotate: number = 30;
     return(
         {
         deg: deg + (+(Math.random() * maxRotate * 2 - maxRotate).toFixed()),

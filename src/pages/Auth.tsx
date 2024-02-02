@@ -33,6 +33,9 @@ export function Auth() {
 
     return(
         <div className={style.login}>
+            <div className={style.loginHeader}>
+                <p>Авторизация</p> 
+            </div>
             <form
                 className={style.mainForm}
                 onSubmit={loginSubmitHandler}

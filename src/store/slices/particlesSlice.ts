@@ -10,11 +10,11 @@ interface ParticlesSlice {
 }
 
 const initialState: ParticlesSlice = {
-    particles: [...Array<ParticlesDots>(20)].map(e => (
+    particles: [...Array<ParticlesDots>(30)].map(e => (
         {
-        size: Math.round(Math.random()*10) + 5,
-        x: Math.round(Math.random()*100) + 20,
-        y: Math.round(Math.random()*100) + 20,
+        size: Math.round(Math.random()*10) + 1,
+        x: (Math.random()*98),
+        y: (Math.random()*98),
         deg: +(Math.random() * 360).toFixed()
         }
     ))

@@ -1,6 +1,10 @@
 @import 'form';
 
-.particle{
-    position: absolute;
-    background-color: $dark_color;
+.particles{
+    .particle{
+        position: absolute;
+        background-color: $light_color;
+        z-index: -1;
+        box-shadow: 0 0 5px 3px rgb(255, 255, 255);
+    }
 }

@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom";
+import { Particles } from "../components/Particles";
 import { useAppDispatch, useAppSelector } from "../hook/redux"
 import { IUser } from "../models/models";
 import { register } from "../store/actions/authActions"
@@ -42,6 +43,7 @@ export function Register() {
             <form
                 className={style.mainForm}
                 onSubmit={loginSubmitHandler}
+                autoComplete={'off'}
             >
                 <div className={style.formField}>
                     <label htmlFor="username">Логин</label>
@@ -73,6 +75,7 @@ export function Register() {
                     </Link>
                 </button>
             </div>
+            <Particles /> 
         </div>
     )
 }
