@@ -39,6 +39,7 @@ export function Auth() {
             <form
                 className={style.mainForm}
                 onSubmit={loginSubmitHandler}
+                autoComplete={'off'}
             >
                 <div className={style.formField}>
                     <label htmlFor="username">Логин</label>

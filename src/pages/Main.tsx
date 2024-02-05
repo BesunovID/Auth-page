@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Particles } from "../components/Particles";
 import { useAppDispatch, useAppSelector } from "../hook/redux";
 import {authSlice} from "../store/slices/authSlice";
 import style from '../styles/Main.module.scss'
@@ -15,7 +16,7 @@ export function Main() {
         <div className={style.container}>
             {authSelector.isAuth ? 
             <div className={style.logged}>
-                <p className={style.username}>{authSelector.username}</p>
+                <p className={style.username}>Добро пожаловать, {authSelector.username}!</p>
                 <button className={style['logout-btn']} onClick={handleLogout}>
                     <Link to='/'>
                         Выйти
@@ -32,6 +33,7 @@ export function Main() {
             <div className={style['main-content']}>
                 Главная
             </div>
+            <Particles /> 
         </div>
     )
 }
